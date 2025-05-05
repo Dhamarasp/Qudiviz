@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qudiviz - Restaurant Phrases</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: {
+              500: '#58cc02',
+              600: '#46a302',
+            },
+          },
+        },
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-gray-100">
+  <!-- Top Navigation -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="sub-lessons.html" class="flex items-center">
+            <i class="fas fa-times text-gray-500 text-xl mr-2"></i>
+            <span class="text-gray-700 font-medium">Exit Lesson</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+            <i class="fas fa-heart text-red-500"></i>
+            <span class="ml-1 font-bold">5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Progress Bar -->
+  <div class="bg-gray-200 h-2">
+    <div class="bg-green-500 h-2 rounded-r-full" style="width: 40%"></div>
+  </div>
+
+  <!-- Study Content -->
+  <div class="max-w-3xl mx-auto px-4 py-8 pb-24">
+    <!-- Video Lesson -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-bold">Restaurant Phrases: Video Lesson</h2>
+        <span class="text-sm font-medium text-gray-500">4 of 10</span>
+      </div>
+
+      <!-- Video Player -->
+      <div class="relative aspect-video bg-black rounded-lg mb-4 overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <!-- Video thumbnail with play button overlay -->
+          <div class="relative w-full h-full">
+            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center" id="video-overlay">
+              <button class="bg-white bg-opacity-80 rounded-full p-4 hover:bg-opacity-100 transition" id="play-button">
+                <i class="fas fa-play text-2xl text-green-500"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- This would be replaced with an actual video player -->
+          <video id="lesson-video" class="w-full h-full hidden" controls>
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Video progress bar (initially hidden) -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-700 hidden" id="video-progress">
+          <div class="h-full bg-green-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <span class="text-sm text-gray-600">2:45 min</span>
+          <span class="mx-2 text-gray-400">|</span>
+          <div class="flex items-center text-sm text-gray-600">
+            <i class="fas fa-closed-captioning mr-1"></i>
+            <span>CC available</span>
+          </div>
+        </div>
+        <div>
+          <button class="text-sm text-green-500 hover:text-green-600 font-medium">
+            <i class="fas fa-download mr-1"></i>
+            Download transcript
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Summary -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+      <h3 class="font-bold mb-3">Video Summary</h3>
+      <p class="text-gray-700 mb-4">In this video, you learned essential restaurant phrases in English, including how to get the waiter's attention, order food, ask for recommendations, and request the bill.</p>
+      
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-md">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <i class="fas fa-lightbulb text-yellow-400"></i>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-gray-700">Remember to use polite phrases like "please" and "thank you" when ordering at restaurants.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Phrases from Video -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+      <h3 class="font-bold mb-4">Key Phrases from Video</h3>
+      
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+            <span class="text-blue-500 font-bold">1</span>
+          </div>
+          <div>
+            <p class="font-medium">"I would like to order, please."</p>
+            <p class="text-sm text-gray-500">Use this to start ordering</p>
+          </div>
+          <button class="ml-auto text-gray-400 hover:text-gray-600">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+            <span class="text-blue-500 font-bold">2</span>
+          </div>
+          <div>
+            <p class="font-medium">"What do you recommend?"</p>
+            <p class="text-sm text-gray-500">Ask for suggestions</p>
+          </div>
+          <button class="ml-auto text-gray-400 hover:text-gray-600">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+            <span class="text-blue-500 font-bold">3</span>
+          </div>
+          <div>
+            <p class="font-medium">"Could I have the bill, please?"</p>
+            <p class="text-sm text-gray-500">Ask for the check</p>
+          </div>
+          <button class="ml-auto text-gray-400 hover:text-gray-600">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+        
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+            <span class="text-blue-500 font-bold">4</span>
+          </div>
+          <div>
+            <p class="font-medium">"Is service included?"</p>
+            <p class="text-sm text-gray-500">Ask about tipping</p>
+          </div>
+          <button class="ml-auto text-gray-400 hover:text-gray-600">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Quiz (Initially Hidden) -->
+    <div id="mini-quiz" class="bg-white rounded-xl shadow-lg p-6 mb-8 hidden">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="font-bold">Quick Check: What You Learned</h3>
+        <span class="text-sm font-medium text-gray-500">1 of 3</span>
+      </div>
+
+      <div class="text-center mb-6">
+        <h4 class="text-lg font-medium mb-2">Which phrase would you use to ask for suggestions?</h4>
+      </div>
+
+      <!-- Answer Options -->
+      <div class="space-y-3 mb-6">
+        <button class="w-full text-left p-3 border-2 border-gray-200 rounded-lg hover:bg-gray-50 transition">
+          <p class="font-medium">"I would like to order, please."</p>
+        </button>
+        
+        <button class="w-full text-left p-3 border-2 border-green-500 bg-green-50 rounded-lg transition">
+          <p class="font-medium">"What do you recommend?"</p>
+        </button>
+        
+        <button class="w-full text-left p-3 border-2 border-gray-200 rounded-lg hover:bg-gray-50 transition">
+          <p class="font-medium">"Could I have the bill, please?"</p>
+        </button>
+        
+        <button class="w-full text-left p-3 border-2 border-gray-200 rounded-lg hover:bg-gray-50 transition">
+          <p class="font-medium">"Is service included?"</p>
+        </button>
+      </div>
+
+      <!-- Feedback -->
+      <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-md mb-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <i class="fas fa-check-circle text-green-500"></i>
+          </div>
+          <div class="ml-3">
+            <p class="text-green-800 font-medium">Correct!</p>
+            <p class="text-green-700 text-sm">"What do you recommend?" is used to ask for suggestions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Navigation -->
+      <div class="flex justify-between">
+        <button disabled class="bg-gray-100 text-gray-400 px-4 py-2 rounded-lg font-medium cursor-not-allowed">
+          Previous
+        </button>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600">
+          Next Question
+        </button>
+      </div>
+    </div>
+
+    <!-- Practice Speaking -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+      <h3 class="font-bold mb-4">Practice Speaking</h3>
+      <p class="text-gray-700 mb-4">Try saying these phrases out loud to improve your pronunciation.</p>
+      
+      <div class="space-y-4">
+        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-microphone text-green-500"></i>
+            </div>
+            <p class="font-medium">"I would like to order, please."</p>
+          </div>
+          <button class="bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600">
+            Record
+          </button>
+        </div>
+        
+        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-microphone text-green-500"></i>
+            </div>
+            <p class="font-medium">"What do you recommend?"</p>
+          </div>
+          <button class="bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600">
+            Record
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Vocabulary -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h3 class="font-bold mb-4">Related Vocabulary</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="flex items-center bg-gray-50 p-2 rounded-md">
+          <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <i class="fas fa-utensils text-purple-500 text-sm"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium">menu</p>
+            <p class="text-xs text-gray-500">menú</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center bg-gray-50 p-2 rounded-md">
+          <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <i class="fas fa-concierge-bell text-purple-500 text-sm"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium">waiter/waitress</p>
+            <p class="text-xs text-gray-500">camarero/camarera</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center bg-gray-50 p-2 rounded-md">
+          <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <i class="fas fa-receipt text-purple-500 text-sm"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium">bill/check</p>
+            <p class="text-xs text-gray-500">cuenta</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center bg-gray-50 p-2 rounded-md">
+          <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <i class="fas fa-glass-water text-purple-500 text-sm"></i>
+          </div>
+          <div>
+            <p class="text-sm font-medium">beverage</p>
+            <p class="text-xs text-gray-500">bebida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+    <div class="max-w-3xl mx-auto flex justify-between">
+      <button class="bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Previous
+      </button>
+      <button class="bg-green-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-600">
+        Next
+        <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Simple script to simulate video playback and quiz appearance
+    document.addEventListener('DOMContentLoaded', function() {
+      const playButton = document.getElementById('play-button');
+      const videoOverlay = document.getElementById('video-overlay');
+      const videoElement = document.getElementById('lesson-video');
+      const videoProgress = document.getElementById('video-progress');
+      const miniQuiz = document.getElementById('mini-quiz');
+      
+      // Simulate video play
+      playButton.addEventListener('click', function() {
+        videoOverlay.classList.add('hidden');
+        videoElement.classList.remove('hidden');
+        videoProgress.classList.remove('hidden');
+      
+        // Simulate video progress
+        let progress = 0;
+        const progressBar = videoProgress.querySelector('div');
+      
+        const interval = setInterval(() => {
+          progress += 1;
+          progressBar.style.width = `${progress}%`;
+      
+          if (progress >= 100) {
+            clearInterval(interval);
+            // Show mini quiz after video completes
+            miniQuiz.classList.remove('hidden');
+            miniQuiz.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 50); // Fast simulation for demo purposes
+      });
+    });
+  </script>
+</body>
+
+</html>

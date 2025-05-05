@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qudiviz - Food & Drinks Lessons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: {
+              500: '#58cc02',
+              600: '#46a302',
+            },
+          },
+        },
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-gray-100">
+  <!-- Top Navigation -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html" class="flex items-center">
+              <div class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center">
+                <span class="text-white font-bold text-xl">Q</span>
+              </div>
+              <span class="ml-2 text-xl font-bold text-green-500">Qudiviz</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:ml-6 md:flex md:space-x-4">
+            <a href="lessons.html"
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+              Lessons
+            </a>
+            <a href="practice.html"
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+              Practice
+            </a>
+            <a href="community.html"
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+              Community
+            </a>
+            <a href="leaderboard.html"
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+              Leaderboard
+            </a>
+            <a href="shop.html"
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+              Shop
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-3">
+          <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1">
+            <i class="fas fa-fire text-orange-500"></i>
+            <span class="ml-1 font-bold">12</span>
+          </div>
+          <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1">
+            <i class="fas fa-heart text-red-500"></i>
+            <span class="ml-1 font-bold">5</span>
+          </div>
+          <div class="hidden sm:flex items-center bg-gray-100 rounded-full px-3 py-1">
+            <i class="fas fa-trophy text-yellow-500"></i>
+            <span class="ml-1 font-bold">340</span>
+          </div>
+          <a href="profile.html" class="flex items-center">
+            <div class="h-8 w-8 rounded-full bg-purple-500 flex items-center justify-center">
+              <span class="text-white font-bold">D</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex items-center md:hidden">
+          <button id="mobile-menu-button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-500 hover:bg-gray-100 focus:outline-none"
+            aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <i class="fas fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state -->
+    <div class="hidden md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+        <a href="lessons.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-crown mr-2"></i>
+          Lessons
+        </a>
+        <a href="practice.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-fire mr-2"></i>
+          Practice
+        </a>
+        <a href="community.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-users mr-2"></i>
+          Community
+        </a>
+        <a href="leaderboard.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-trophy mr-2"></i>
+          Leaderboard
+        </a>
+        <a href="shop.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-heart mr-2"></i>
+          Shop
+        </a>
+        <a href="profile.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-user mr-2"></i>
+          Profile
+        </a>
+        <a href="settings.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-cog mr-2"></i>
+          Settings
+        </a>
+        <a href="help.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-500 hover:bg-gray-100">
+          <i class="fas fa-question-circle mr-2"></i>
+          Help
+        </a>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+          <div class="flex items-center px-3">
+            <div class="flex-shrink-0">
+              <div class="h-10 w-10 rounded-full bg-purple-500 flex items-center justify-center">
+                <span class="text-white font-bold">D</span>
+              </div>
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium text-gray-800">Dhamar222</div>
+            </div>
+            <div class="ml-3 flex gap-2">
+              <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+                <i class="fas fa-fire text-orange-500"></i>
+                <span class="ml-1 font-bold">12</span>
+              </div>
+              <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+                <i class="fas fa-heart text-red-500"></i>
+                <span class="ml-1 font-bold">5</span>
+              </div>
+              <div class="flex items-center bg-gray-100 rounded-full px-3 py-1">
+                <i class="fas fa-trophy text-yellow-500"></i>
+                <span class="ml-1 font-bold">340</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 px-2 space-y-1">
+            <a href="index.html"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-500 hover:bg-gray-100">
+              <i class="fas fa-sign-out-alt mr-2"></i>
+              Sign out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Lesson Header -->
+  <div class="bg-yellow-400 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="lessons.html" class="mr-3 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <div>
+            <h1 class="text-2xl font-bold">Food & Drinks</h1>
+            <p class="text-yellow-100">Unit 1 • Lesson 3 of 5</p>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="bg-white text-yellow-500 px-4 py-2 rounded-lg font-bold">
+            <i class="fas fa-star mr-1"></i>
+            <span>In Progress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lesson Description -->
+  <div class="max-w-5xl mx-auto px-4 py-6">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-bold mb-2">About This Lesson</h2>
+      <p class="text-gray-600 mb-4">Learn essential vocabulary and phrases related to food and drinks in English.
+        Perfect for ordering at restaurants, grocery shopping, and discussing meals.</p>
+
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Beginner Friendly</span>
+        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Vocabulary</span>
+        <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Conversation</span>
+        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">15 Minutes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub-Lessons List -->
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-xl font-bold mb-4">Lesson Modules</h2>
+
+    <div class="space-y-4">
+      <!-- Completed Sub-Lesson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="flex flex-col sm:flex-row">
+          <div class="bg-green-500 sm:w-2 w-full h-2 sm:h-auto"></div>
+          <div class="p-4 sm:p-6 flex-grow">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-utensils text-green-500"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold">Basic Food Vocabulary</h3>
+                    <p class="text-sm text-gray-500">Learn names of common foods</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="flex items-center mr-4">
+                  <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                  <span class="text-sm text-gray-500">Completed</span>
+                </div>
+                <a href="study.html"
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">
+                  Review
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Sub-Lesson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="flex flex-col sm:flex-row">
+          <div class="bg-green-500 sm:w-2 w-full h-2 sm:h-auto"></div>
+          <div class="p-4 sm:p-6 flex-grow">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-coffee text-green-500"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold">Drinks and Beverages</h3>
+                    <p class="text-sm text-gray-500">Learn about different drinks</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="flex items-center mr-4">
+                  <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                  <span class="text-sm text-gray-500">Completed</span>
+                </div>
+                <a href="study.html"
+                  class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">
+                  Review
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Sub-Lesson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border-2 border-yellow-400">
+        <div class="flex flex-col sm:flex-row">
+          <div class="bg-yellow-400 sm:w-2 w-full h-2 sm:h-auto"></div>
+          <div class="p-4 sm:p-6 flex-grow">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-store text-yellow-500"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold">Restaurant Phrases</h3>
+                    <p class="text-sm text-gray-500">Learn how to order food</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="flex items-center mr-4">
+                  <i class="fas fa-spinner text-yellow-500 mr-1"></i>
+                  <span class="text-sm text-gray-500">In Progress</span>
+                </div>
+                <a href="study.html"
+                  class="bg-yellow-400 text-white px-4 py-2 rounded-lg font-medium hover:bg-yellow-500">
+                  Continue
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locked Sub-Lesson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden opacity-70">
+        <div class="flex flex-col sm:flex-row">
+          <div class="bg-gray-300 sm:w-2 w-full h-2 sm:h-auto"></div>
+          <div class="p-4 sm:p-6 flex-grow">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-shopping-cart text-gray-500"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold">Grocery Shopping</h3>
+                    <p class="text-sm text-gray-500">Learn vocabulary for shopping</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="flex items-center mr-4">
+                  <i class="fas fa-lock text-gray-500 mr-1"></i>
+                  <span class="text-sm text-gray-500">Locked</span>
+                </div>
+                <button disabled class="bg-gray-200 text-gray-400 px-4 py-2 rounded-lg font-medium cursor-not-allowed">
+                  Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locked Sub-Lesson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden opacity-70">
+        <div class="flex flex-col sm:flex-row">
+          <div class="bg-gray-300 sm:w-2 w-full h-2 sm:h-auto"></div>
+          <div class="p-4 sm:p-6 flex-grow">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-comments text-gray-500"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold">Talking About Food</h3>
+                    <p class="text-sm text-gray-500">Express opinions about food</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="flex items-center mr-4">
+                  <i class="fas fa-lock text-gray-500 mr-1"></i>
+                  <span class="text-sm text-gray-500">Locked</span>
+                </div>
+                <button disabled class="bg-gray-200 text-gray-400 px-4 py-2 rounded-lg font-medium cursor-not-allowed">
+                  Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice Button -->
+    <div class="mt-8 flex justify-center">
+      <a href="quiz.html"
+        class="bg-green-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-green-600 flex items-center">
+        <i class="fas fa-dumbbell mr-2"></i>
+        Practice All Food & Drinks
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="text-center text-gray-400 text-sm">
+      <p>&copy; 2025 Qudiviz. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+
+      menuButton.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+
+        // Toggle between hamburger and X icon
+        if (menuIcon.classList.contains('fa-bars')) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-times');
+        } else {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
